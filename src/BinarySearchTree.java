@@ -29,6 +29,21 @@ public class BinarySearchTree {
 			}
 		}
 	}
+	
+	public Node<Integer,Book> search(int key){
+		Node<Integer,Book> current=root;
+		while(current.key!=key){
+			if(current.key>key){
+				current=current.left;
+			}else{
+				current=current.right;
+			}
+			if(current==null){
+				return null;
+			}
+		}
+		return current;
+	}
 
 	public void inOrderTravers(Node<Integer,Book> node,String keyword){
 		if(node.left!=null){
