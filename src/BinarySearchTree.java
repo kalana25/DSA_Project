@@ -45,16 +45,27 @@ public class BinarySearchTree {
 		return current;
 	}
 
-	public void inOrderTravers(Node<Integer,Book> node,String keyword){
+	public void PrintByKeyword(Node<Integer,Book> node,String keyword){
 		if(node.left!=null){
-			inOrderTravers(node.left,keyword);	
+			PrintByKeyword(node.left,keyword);	
 		}
-		if(findString(node.getElement().getbName(), keyword)!=-1){
-			System.out.println(node.getElement().getbName());
+		if(findString(node.getElement().getTitle(), keyword)!=-1){
+			System.out.println(node.getElement().getTitle());
 		}
 		if(node.right!=null){
-			inOrderTravers(node.right,keyword);
+			PrintByKeyword(node.right,keyword);
 		}		
+	}
+	
+	public void InOrderTraverse(Node<Integer,Book> node){
+		String format = "%-30s%-15s%-15s%s%n";
+		if(node.left!=null){
+			InOrderTraverse(node.left);	
+		}
+		System.out.printf(format,node.getElement().getTitle(),node.getElement().getIsbn(),node.getElement().getAuthorName(),node.getElement().getAuthorSurname());
+		if(node.right!=null){
+			InOrderTraverse(node.right);
+		}
 	}
 	
 	public int findString(String str, String key){

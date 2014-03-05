@@ -35,19 +35,19 @@ public class Book {
 	
 	
 	//getting values
-	public int getisbm(){
+	public int getIsbn(){
 		return this.isbm;
 	}
 	
-	public String getbName(){
+	public String getTitle(){
 		return this.bName;
 	}
 	
-	public String getauthorFname(){
+	public String getAuthorName(){
 		return this.authorFname;
 	}
 	
-	public String getauthorLname(){
+	public String getAuthorSurname(){
 		return this.authorSname;
 	}
 	
